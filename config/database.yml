@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: fx_txns_dev
+
+test:
+  <<: *default
+  database: fx_txns_test
+
+production:
+  <<: *default
+  database: fx_txns_prod
+  username: fx_transactions
+  password: <%= ENV["FX_TRANSACTIONS_DATABASE_PASSWORD"] %>
