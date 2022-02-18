@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class FxTransactionResource < JSONAPI::Resource
-  attributes :customer, :in_amount, :out_amount, :txn_code, :txn_date
+  attributes :customer, :in_amount, :out_amount, :txn_code, :txn_date, :txn_state
 
   def self.creatable_fields(_options)
     [:customer_id]
